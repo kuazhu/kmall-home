@@ -9,6 +9,15 @@
 <body>
 	<%= require('html-loader!./common/nav.html') %>
 	<%= require('html-loader!./common/search.html') %>
+	<div class="user-page-wrap">
+		<div class="container clearfix">
+			<%= require('html-loader!./common/side.html') %>
+			<div class="side-content">
+			</div>
+		</div>
+	</div>
+
+
 	<%= require('html-loader!./common/footer.html') %>
 </body>
 </html>

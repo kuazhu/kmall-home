@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+		<%= htmlWebpackPlugin.options.title %> - KMALL电商平台
+	</title>
+</head>
+<body>
+	<%= require('html-loader!./common/logo.html') %>
+	<div class="result">
+		<div class="container">
+				<div class="result-box default">
+					<h2 class="title">造作成功</h2>
+					<div class="btns">
+						<a href="/" class="btn">返回首页</a>
+					</div>
+				</div>			
+				<div class="result-box register">
+					<h2 class="title">注册成功</h2>
+					<div class="btns">
+						<a href="/" class="btn">返回首页</a>
+						<a href="./user-login.html" class="btn">去登录</a>
+					</div>
+				</div>
+				<div class="result-box add">
+					<h2 class="title">添加购物车成功</h2>
+					<div class="btns">
+						<a href="/" class="btn">返回首页</a>
+						<a href="./user-login.html" class="btn">去登录</a>
+					</div>
+				</div>
+				<div class="result-box updatePassword">
+					<h2 class="title">修改密码成功</h2>
+					<div class="btns">
+						<a href="/" class="btn">返回首页</a>
+						<a href="./user-center.html" class="btn">去个人中心</a>
+					</div>
+				</div>								
+		</div>
+	</div>
+	<%= require('html-loader!./common/footer.html') %>
+</body>
+</html>

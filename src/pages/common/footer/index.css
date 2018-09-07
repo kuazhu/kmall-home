@@ -1,0 +1,19 @@
+/*
+* @Author: TomChen
+* @Date:   2018-09-06 10:10:46
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-09-06 10:12:32
+*/
+.footer{
+	margin-top: 10px;
+	text-align: center;
+}
+.links{
+	margin-bottom: 10px;
+}
+.links .link{
+	padding:0 10px;
+}
+.copyright{
+	color: #999;
+}

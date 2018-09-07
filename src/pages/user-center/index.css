@@ -1,0 +1,21 @@
+/*
+* @Author: TomChen
+* @Date:   2018-09-04 11:21:49
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-09-07 15:29:55
+*/
+.form-item{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+.label-item{
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+}
+.content-item{
+	display: inline-block;
+	width: 400px;
+	padding-left: 40px;
+}

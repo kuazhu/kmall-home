@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-08-16 09:57:02
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-04 11:25:40
+* @Last Modified time: 2018-09-07 16:24:25
 */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -11,9 +11,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const publicPath = "/";
 
 //生成HtmlWebpackPlugin 配置
-const getHtmlConfig = (name)=>({
+const getHtmlConfig = (name,title)=>({
     template:'./src/view/'+name+'.html',
     filename:name+'.html',
+    title:title,
     inject:true,
     hash:true,
     chunks:['common',name]
@@ -28,7 +29,11 @@ module.exports = {
 	entry:{
         'common':'./src/pages/common/index.js',
         'index':'./src/pages/index/index.js',
-        'user-login':'./src/pages/user-login/index.js'
+        'user-login':'./src/pages/user-login/index.js',
+        'user-register':'./src/pages/user-register/index.js',
+        'user-center':'./src/pages/user-center/index.js',
+        'user-update-password':'./src/pages/user-update-password/index.js',
+        'result':'./src/pages/result/index.js'
     },
     //配置额外模块
     externals:{
@@ -47,7 +52,8 @@ module.exports = {
         alias:{
             pages:path.resolve(__dirname,'./src/pages'),
             util:path.resolve(__dirname,'./src/util'),
-            api:path.resolve(__dirname,'./src/api'),
+            service:path.resolve(__dirname,'./src/service'),
+            node_modules:path.resolve(__dirname,'./node_modules'),
             common:path.resolve(__dirname,'./src/common')
         }
     },
@@ -68,10 +74,14 @@ module.exports = {
             },
               //处理图片loader
             {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|ttf|woff2|woff|eot|svg)\??.*$/,
                 use: [
                   {
-                    loader: 'url-loader'
+                    loader: 'url-loader',
+                    options:{
+                        limit:100,//图片大小限制,小于该值时打包为base64
+                        name:'resource/[name].[ext]'//文件打包后的目录
+                    }                    
                   }
                 ]
             },
@@ -84,12 +94,22 @@ module.exports = {
                         presets: ['env','es2015','stage-3'],               
                     }
                 }               
-            }              
+            },
+            {
+                test:/\.tpl$/,
+                use: {
+                    loader: 'html-loader',
+                }               
+            }                           
         ]
   },
   plugins: [
-  	new HtmlWebpackPlugin(getHtmlConfig('index')),
-    new HtmlWebpackPlugin(getHtmlConfig('user-login')),    
+  	new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),    
+    new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),    
+    new HtmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),    
+    new HtmlWebpackPlugin(getHtmlConfig('user-update-password','修改密码')),    
+    new HtmlWebpackPlugin(getHtmlConfig('result','结果提示')),    
   	new CleanWebpackPlugin(['dist']),
     new MiniCssExtractPlugin({
         filename:'css/[name].css'
@@ -98,6 +118,11 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     port:3002,
-    historyApiFallback:true
+    proxy:{
+        "/user":{
+            target:"http://127.0.0.1:3000",
+            changeOrigin: true
+        }
+    }
   }
 }
