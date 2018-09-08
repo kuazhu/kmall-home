@@ -2,5 +2,122 @@
 * @Author: TomChen
 * @Date:   2018-09-04 11:20:48
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-04 16:00:33
+* @Last Modified time: 2018-09-08 16:10:02
 */
+.focus{
+	margin-bottom: 40px;
+}
+.keywords{
+	float: left;
+	width: 240px;
+	height: 440px;
+	padding: 20px 0px;
+	background: #999;
+	box-sizing: border-box;
+	margin-right: 10px;
+}
+.keywords .keyowrd-item{
+	padding:0 10px;
+	height: 40px;
+	line-height: 40px;
+}
+.keywords .keyowrd-item:hover{
+	background-color: #666;
+}
+.keywords .keyowrd-item .link{
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px;
+}
+.keywords .keyowrd-item .link:hover{
+	color: #f21;
+}
+
+.carousel{
+	float: left;
+	width: 830px;
+	height: 440px;
+	position: relative;
+}
+.carousel li{
+	width: 830px;
+	height: 440px;
+}
+.carousel li img{
+	width: 100%;
+	height: 100%;
+}
+.carousel .arrow{
+	width: 30px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	color: #fff;
+	position: absolute;
+	top:190px;
+	background-color: rgba(0,0,0,0.3)
+}
+.carousel .arrow.prev{
+	left: 0;
+}
+.carousel .arrow.next{
+	right: 0;
+}
+
+/*楼层*/
+.floor{
+	margin-bottom: 20px;
+}
+.floor-box{
+	margin-bottom: 20px;
+}
+.floor-title{
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+.floor-box:nth-child(1) .floor-title{
+	color: #f21;
+	border-bottom: 2px solid #f21;
+}
+.floor-box:nth-child(2) .floor-title{
+	color: #ff1;
+	border-bottom: 2px solid #ff1;
+}
+.floor-box:nth-child(3) .floor-title{
+	color: #f0f;
+	border-bottom: 2px solid #f0f;
+}
+.floor-item{
+	float: left;
+	width: 208px;
+	height: 280px;
+	margin-right: 10px;
+	background-color: #fff;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 10px;
+}
+.floor-item:hover{
+	box-shadow: 0px 1px 7px rgba(0,0,0,0.5);
+}
+.floor-item:last-child{
+	margin-right: 0px;
+}
+.floor-item a{
+	text-decoration: none;
+
+}
+.floor-text{
+	font-size: 18px;
+	font-weight: bold;
+	color: #111;
+
+}
+.floor-img{
+	width: 180px;
+	height: 180px;
+	margin-top: 20px;
+}
+

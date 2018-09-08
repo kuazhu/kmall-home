@@ -1,0 +1,63 @@
+/*
+* @Author: TomChen
+* @Date:   2018-09-08 10:15:32
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-09-08 14:38:08
+*/
+
+.carousel {
+    position: relative;
+    overflow: auto;
+}
+
+.carousel li {
+    list-style: none;
+}
+
+.carousel ul li {
+    float: left;
+}
+
+.carousel .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    text-align: center;
+}
+
+.carousel .dots li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+
+    text-indent: -999em;
+
+    border: 2px solid #fff;
+    border-radius: 6px;
+
+    cursor: pointer;
+    opacity: .4;
+
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+
+.carousel .dots li.active {
+    background: #fff;
+    opacity: 1;
+}
+
+.carousel .arrows {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+}
+
+.carousel .arrow {
+    display: inline;
+    cursor: pointer;
+}

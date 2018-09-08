@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-08-16 09:57:02
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-07 16:24:25
+* @Last Modified time: 2018-09-08 16:12:25
 */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -29,6 +29,7 @@ module.exports = {
 	entry:{
         'common':'./src/pages/common/index.js',
         'index':'./src/pages/index/index.js',
+        'list':'./src/pages/list/index.js',
         'user-login':'./src/pages/user-login/index.js',
         'user-register':'./src/pages/user-register/index.js',
         'user-center':'./src/pages/user-center/index.js',
@@ -51,6 +52,7 @@ module.exports = {
     resolve:{
         alias:{
             pages:path.resolve(__dirname,'./src/pages'),
+            images:path.resolve(__dirname,'./src/images'),
             util:path.resolve(__dirname,'./src/util'),
             service:path.resolve(__dirname,'./src/service'),
             node_modules:path.resolve(__dirname,'./node_modules'),
@@ -104,7 +106,8 @@ module.exports = {
         ]
   },
   plugins: [
-  	new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+    new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+  	new HtmlWebpackPlugin(getHtmlConfig('list','商品列表')),
     new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),    
     new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),    
     new HtmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),    
