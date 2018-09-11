@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 09:55:08
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-08 17:05:16
+* @Last Modified time: 2018-09-10 16:02:34
 */
 require('pages/common/nav')
 require('pages/common/search')
@@ -10,8 +10,13 @@ require('pages/common/footer')
 
 require('./index.css')
 
-var _util = require('util');
+//引入分页插件
+require('util/pagination')
 
+var _util = require('util');
+var _product = require('service/product')
+
+var tpl = require('./index.tpl')
 
 var page = {
 	listParams:{
@@ -21,8 +26,18 @@ var page = {
 		orderBy:_util.getParamFromUrl('orderBy') || 'default'
 	},
 	init:function(){
+		this.initPagination();
 		this.bindEvent();
 		this.loadProductList();
+	},
+	initPagination:function(){
+		var _this = this;
+		var $pagination = $('.pagination-box');
+		$pagination.on('page-change',function(e,value){
+			_this.listParams.page = value;
+			_this.loadProductList();
+		});
+		$pagination.pagination();
 	},
 	bindEvent:function(){
 		var _this = this;
@@ -53,6 +68,7 @@ var page = {
 					_this.listParams.orderBy = 'price_desc';					
 				}			
 			}
+			_this.listParams.page = 1;
 			_this.loadProductList();
 
 		});
@@ -60,8 +76,33 @@ var page = {
 	loadProductList:function(){
 		this.listParams.categoryId 
 		? (delete this.listParams.keyword)
-		: (delete this.listParams.categoryId) 
-		console.log(this.listParams)
+		: (delete this.listParams.categoryId);
+		_product.getProductList(this.listParams,function(result){
+
+			var list = result.list.map(function(product){
+				if(product.images){
+					product.image = product.images.split(',')[0];
+				}else{
+					product.image = require('images/product-default.jpg')
+				}
+				return product;
+			});
+
+			var html = _util.render(tpl,{
+				list:list
+			});
+
+			$('.product-list-box').html(html)
+
+			$('.pagination-box').pagination('render',{
+				current:result.current,
+				total:result.total,
+				pageSize:result.pageSize,
+			})
+
+		},function(msg){
+			_util.showErrorMsg(msg)
+		}) 
 	}
 }
 

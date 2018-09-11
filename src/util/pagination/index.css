@@ -1,0 +1,33 @@
+/*
+* @Author: TomChen
+* @Date:   2018-09-10 11:09:36
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-09-10 15:51:30
+*/
+.pagination{
+	text-align: center;
+}
+.page-item{
+	display: inline-block;
+	width: 45px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #999;
+	cursor: pointer;
+	user-select: none;
+}
+.disabled{
+	border-color: #aaa;
+	color: #aaa;
+	cursor: auto;
+}
+.active{
+	border-color: #f21;
+	cursor: auto;
+}
+.page-summ{
+	display: inline-block;
+	font-size: 14px;
+	margin-left: 10px;
+}

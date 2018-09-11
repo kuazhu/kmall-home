@@ -1,0 +1,124 @@
+/*
+* @Author: TomChen
+* @Date:   2018-09-04 11:20:48
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-09-11 16:11:19
+*/
+.cart-title li,
+.cart-item li,
+.cart-footer li{
+	float: left;
+}
+.cart-title,
+.cart-item,
+.cart-footer{
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+
+.product-select{
+	width: 6%;
+}
+.product-info{
+	width: 54%;
+}
+.product-price{
+	width: 10%;
+}
+.product-count{
+	width: 10%;
+}
+.product-totalPrice{
+	width: 10%;
+}
+.product-opreation{
+	width: 10%;
+}
+
+.cart-title {
+	height: 40px;
+	line-height: 40px;
+	background-color: #ddd;
+	color: #666;
+	margin-bottom: 15px;
+}
+
+.cart-item {
+	height: 80px;
+	line-height: 80px;
+	margin-bottom: 15px;
+	border: 1px solid #ddd;
+}
+
+.cart-item .product-info img{
+	width: 60px;
+	height: 60px;
+	vertical-align: middle;
+}
+
+.cart-item .product-count .count-input{
+	width: 40px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	outline: none;
+	border: 1px solid #ddd;
+	margin-left: -1px;
+}
+.cart-item .product-count .count-btn{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #ddd;	
+	background-color: #fff;
+	cursor: pointer;
+	user-select: none;
+}
+.cart-item .product-count .count-btn.plus{
+	margin-left: -1px;
+}
+.cart-item  .product-totalPrice{
+	font-size: 14px;
+	font-weight: bold;
+}
+.cart-item .product-opreation .delete-one{
+	cursor: pointer;
+	user-select: none;
+}
+
+.cart-footer{
+	height: 60px;
+	line-height: 60px;
+	background-color: #ddd;
+	color: #666;	
+}
+.cart-footer .product-opreation .delete-selected{
+	cursor: pointer;
+	user-select: none;
+}
+.cart-footer .product-submit{
+	float: right;
+}
+.cart-footer .product-submit .btn-submit{
+	height: 60px;
+	line-height: 60px;
+	width: 100px;	
+}
+.cart-footer .product-submit  .total-price{
+	display: inline-block;
+	line-height: 60px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #f21;
+}
+.cart-footer .product-submit .total-price-text{
+	position: relative;
+	top:-2px;
+}
+.cart-box .gohome-btn{
+	display: block;
+	margin: 20px auto;
+}
+

@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 09:58:36
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-07 09:52:06
+* @Last Modified time: 2018-09-10 09:28:36
 */
 require('./index.css')
 
@@ -38,11 +38,7 @@ var page = {
 	},
 	submit:function(){
 		var keyword = $.trim($('#search-input').val())
-		if(keyword){
-			window.location.href = "./list.html?keyword="+keyword;
-		}else{
-			_util.goHome();
-		}
+		window.location.href = "./list.html?keyword="+keyword;
 	}
 }
 

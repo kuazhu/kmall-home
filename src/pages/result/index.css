@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 11:21:49
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-06 16:48:01
+* @Last Modified time: 2018-09-11 10:25:23
 */
 .result{
 	min-height: 300px;
@@ -17,4 +17,7 @@
 }
 .result-box{
 	display: none;
+}
+.addCart .btn{
+	width: 110px;
 }
