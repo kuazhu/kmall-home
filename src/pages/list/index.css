@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 11:20:48
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-10 10:12:34
+* @Last Modified time: 2018-09-13 16:56:59
 */
 
 /*
@@ -41,7 +41,7 @@
 /*
 商品列表
 */
-.product-item{
+.product-list-item{
 	float: left;
 	width: 208px;
 	height: 280px;
@@ -52,13 +52,13 @@
 	box-sizing: border-box;
 	padding-top: 10px;
 }
-.product-item:hover{
+.product-list-item:hover{
 	box-shadow: 0px 1px 7px rgba(0,0,0,0.5);
 }
-.product-item:nth-child(5n+0){
+.product-list-item:nth-child(5n+0){
 	margin-right: 0px;
 }
-.product-item a{
+.product-list-item a{
 	text-decoration: none;
 }
 .product-img{

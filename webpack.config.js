@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-08-16 09:57:02
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-11 11:18:09
+* @Last Modified time: 2018-09-13 16:07:30
 */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -32,6 +32,7 @@ module.exports = {
         'list':'./src/pages/list/index.js',
         'detail':'./src/pages/detail/index.js',
         'cart':'./src/pages/cart/index.js',
+        'order-confirm':'./src/pages/order-confirm/index.js',
         'user-login':'./src/pages/user-login/index.js',
         'user-register':'./src/pages/user-register/index.js',
         'user-center':'./src/pages/user-center/index.js',
@@ -111,7 +112,8 @@ module.exports = {
     new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
     new HtmlWebpackPlugin(getHtmlConfig('list','商品列表')),
     new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
-  	new HtmlWebpackPlugin(getHtmlConfig('cart','购物车')),
+    new HtmlWebpackPlugin(getHtmlConfig('cart','购物车')),
+  	new HtmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认')),
     new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),    
     new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),    
     new HtmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),    
@@ -137,7 +139,15 @@ module.exports = {
         "/cart":{
             target:"http://127.0.0.1:3000",
             changeOrigin: true
-        }                 
+        },
+        "/shipping":{
+            target:"http://127.0.0.1:3000",
+            changeOrigin: true
+        },
+        "/order":{
+            target:"http://127.0.0.1:3000",
+            changeOrigin: true
+        }                                   
     }
   }
 }

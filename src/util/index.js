@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 17:16:17
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-07 15:38:27
+* @Last Modified time: 2018-09-13 09:42:02
 */
 var Hogan = require('hogan.js');
 var _util = {
@@ -34,6 +34,9 @@ var _util = {
 	},
 	showErrorMsg:function(msg){
 		alert(msg);
+	},
+	confirm:function(msg){
+		return window.confirm(msg);
 	},
 	doLogin:function(){
 		window.location.href = './user-login.html?redirect='+encodeURIComponent(window.location.href)

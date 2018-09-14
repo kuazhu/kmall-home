@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 16:47:16
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-11 16:59:15
+* @Last Modified time: 2018-09-13 10:49:28
 */
 var _util = require('util')
 
@@ -24,6 +24,13 @@ var _cart = {
 			error:error		
 		})
 	},
+	getCartCount:function(success,error){
+		_util.request({
+			url:'/cart/count',
+			success:success,
+			error:error		
+		})
+	},
 	selectOne:function(data,success,error){
 		_util.request({
 			url:'/cart/selectOne',
@@ -41,7 +48,49 @@ var _cart = {
 			success:success,
 			error:error		
 		})
-	},				
+	},
+	selectAll:function(success,error){
+		_util.request({
+			url:'/cart/selectAll',
+			method:'put',
+			success:success,
+			error:error		
+		})
+	},
+	unselectAll:function(success,error){
+		_util.request({
+			url:'/cart/unselectAll',
+			method:'put',
+			success:success,
+			error:error		
+		})
+	},
+	deleteOne:function(data,success,error){
+		_util.request({
+			url:'/cart/deleteOne',
+			method:'put',
+			data:data,
+			success:success,
+			error:error		
+		})
+	},
+	deleteSelected:function(success,error){
+		_util.request({
+			url:'/cart/deleteSelected',
+			method:'put',
+			success:success,
+			error:error		
+		})
+	},
+	updateCount:function(data,success,error){
+		_util.request({
+			url:'/cart/updateCount',
+			method:'put',
+			data:data,
+			success:success,
+			error:error		
+		})
+	},					
 }
 
 module.exports = _cart;
