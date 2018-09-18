@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 11:20:48
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-13 16:56:59
+* @Last Modified time: 2018-09-17 11:16:12
 */
 
 /*
@@ -44,7 +44,7 @@
 .product-list-item{
 	float: left;
 	width: 208px;
-	height: 280px;
+	height: 300px;
 	margin-right: 10px;
 	margin-bottom: 20px;
 	background-color: #fff;
@@ -75,6 +75,9 @@
 	line-height: 20px;
 	color: #333;
 	font-size: 14px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0px 10px;	
 }
 
 

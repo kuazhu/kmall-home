@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 17:16:17
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-13 09:42:02
+* @Last Modified time: 2018-09-14 10:34:39
 */
 var Hogan = require('hogan.js');
 var _util = {
@@ -33,6 +33,9 @@ var _util = {
 		})
 	},
 	showErrorMsg:function(msg){
+		alert(msg);
+	},
+	showSuccessMsg:function(msg){
 		alert(msg);
 	},
 	confirm:function(msg){

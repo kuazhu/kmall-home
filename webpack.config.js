@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-08-16 09:57:02
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-13 16:07:30
+* @Last Modified time: 2018-09-18 11:20:35
 */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -33,6 +33,9 @@ module.exports = {
         'detail':'./src/pages/detail/index.js',
         'cart':'./src/pages/cart/index.js',
         'order-confirm':'./src/pages/order-confirm/index.js',
+        'order-list':'./src/pages/order-list/index.js',
+        'order-detail':'./src/pages/order-detail/index.js',
+        'payment':'./src/pages/payment/index.js',
         'user-login':'./src/pages/user-login/index.js',
         'user-register':'./src/pages/user-register/index.js',
         'user-center':'./src/pages/user-center/index.js',
@@ -113,7 +116,10 @@ module.exports = {
     new HtmlWebpackPlugin(getHtmlConfig('list','商品列表')),
     new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
     new HtmlWebpackPlugin(getHtmlConfig('cart','购物车')),
-  	new HtmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认')),
+    new HtmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认')),
+    new HtmlWebpackPlugin(getHtmlConfig('order-list','订单列表')),
+    new HtmlWebpackPlugin(getHtmlConfig('order-detail','订单详情')),
+  	new HtmlWebpackPlugin(getHtmlConfig('payment','支付')),
     new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),    
     new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),    
     new HtmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),    
@@ -147,7 +153,11 @@ module.exports = {
         "/order":{
             target:"http://127.0.0.1:3000",
             changeOrigin: true
-        }                                   
+        },
+        "/payment":{
+            target:"http://127.0.0.1:3000",
+            changeOrigin: true
+        }                                            
     }
   }
 }

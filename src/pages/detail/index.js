@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 09:55:08
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-11 11:12:42
+* @Last Modified time: 2018-09-17 11:20:09
 */
 require('pages/common/nav')
 require('pages/common/search')
@@ -69,14 +69,10 @@ var page = {
 	},
 	loadProductDetail:function(){
 		var _this = this;
+		$('.detail-box').html("<div class='loading'></div>")
 		_product.getProductDetail({productId:this.params.productId},function(product){
 			if(product){
-				if(product.images){
-					product.images = product.images.split(',')
-				}else{
-					product.images = [require('images/product-default.jpg')]
-				}
-
+				product.images = product.images.split(',')
 				product.mainImg = product.images[0];
 
 				//缓存库存为了修改购买数量使用

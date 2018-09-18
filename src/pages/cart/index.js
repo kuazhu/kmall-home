@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 09:55:08
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-13 15:12:12
+* @Last Modified time: 2018-09-17 11:20:52
 */
 var _nav = require('pages/common/nav')
 require('pages/common/search')
@@ -138,6 +138,7 @@ var page = {
 	},
 	loadCart:function(){
 		var _this = this;
+		this.$box.html("<div class='loading'></div>")
 		_cart.getCart(function(cart){
 			_this.renderCart(cart)
 		},function(){
@@ -153,11 +154,7 @@ var page = {
 		
 		//购物车数据适配
 		cart.cartList.forEach(item=>{
-			if(item.product.images){
-				item.product.image = item.product.images.split(',')[0];
-			}else{
-				item.product.image = require('images/product-default.jpg');
-			}
+			item.product.image = item.product.images.split(',')[0];
 		})
 		cart.notEmpty = !!cart.cartList.length;
 

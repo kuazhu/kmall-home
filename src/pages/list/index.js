@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 09:55:08
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-10 16:02:34
+* @Last Modified time: 2018-09-17 11:19:19
 */
 require('pages/common/nav')
 require('pages/common/search')
@@ -77,14 +77,12 @@ var page = {
 		this.listParams.categoryId 
 		? (delete this.listParams.keyword)
 		: (delete this.listParams.categoryId);
+		
+		$('.product-list-box').html("<div class='loading'></div>")
+		
 		_product.getProductList(this.listParams,function(result){
-
 			var list = result.list.map(function(product){
-				if(product.images){
-					product.image = product.images.split(',')[0];
-				}else{
-					product.image = require('images/product-default.jpg')
-				}
+				product.image = product.images.split(',')[0];
 				return product;
 			});
 

@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 11:20:48
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-11 09:13:31
+* @Last Modified time: 2018-09-17 11:25:26
 */
 .product-intro{
 	margin-bottom: 20px;
@@ -52,14 +52,15 @@
 .product-info .product-name{
 	font-size: 18px;
 	font-weight: bold;
-	height: 40px;
-	line-height: 40px;
-}
-.product-info .product-description{
-	font-size: 16px;
 	height: 60px;
 	line-height: 30px;
-	color: #f21;
+}
+.product-info .product-description{
+    font-size: 14px;
+    height: 40px;
+    line-height: 19px;
+    color: #f21;
+    margin-bottom: 15px;
 }
 .product-info .product-info-item{
 	height: 40px;

@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2018-09-04 09:58:36
 * @Last Modified by:   TomChen
-* @Last Modified time: 2018-09-07 15:32:15
+* @Last Modified time: 2018-09-17 09:32:16
 */
 require('pages/common/nav')
 require('pages/common/search')
@@ -24,6 +24,7 @@ var page = {
 		_side.render('user-center')
 	},
 	loadUserInfo:function(){
+		$('.side-content').html("<div class='loading'></div>");
 		_user.getUserInfo(function(userInfo){
 			var html = _util.render(tpl,userInfo);
 			$('.side-content').html(html)

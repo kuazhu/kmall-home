@@ -1,0 +1,54 @@
+/*
+* @Author: TomChen
+* @Date:   2018-09-04 11:21:49
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-09-15 11:15:45
+*/
+.order-list .product-info{
+	width: 70%;
+}
+.order-list .product-price{
+	width: 10%;
+}
+.order-list .product-count{
+	width: 10%;
+}
+.order-list .product-totalPrice{
+	width: 10%;
+}
+
+.order-list .product-item{
+	margin-bottom: 0px;
+	margin-top: -1px;
+}
+
+.order-list .order-title{
+	margin-top: 20px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #fafafa;
+	padding: 0 10px;
+}
+.order-list .order-title li{
+	float: left;
+	margin-right: 10px;
+	color: #666;
+}
+.order-list .order-title li.order-payment .text{
+	color: #f21;
+	font-size: 14px;
+	font-weight: bold;
+}
+.order-list .order-title li.order-detail{
+	float: right;
+}
+
+.order-list .order-title li.order-shipping-name .text{
+	width: 100px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+}
+
+

@@ -1,0 +1,36 @@
+/*
+* @Author: TomChen
+* @Date:   2018-09-04 11:21:49
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-09-15 15:46:52
+*/
+.order-detail .product-info{
+	width: 70%;
+}
+.order-detail .product-price{
+	width: 10%;
+}
+.order-detail .product-count{
+	width: 10%;
+}
+.order-detail .product-totalPrice{
+	width: 10%;
+}
+
+.order-detail .product-item{
+	margin-bottom: 0px;
+	margin-top: -1px;
+}
+
+.order-detail .order-info li{
+	height: 30px;
+	line-height: 30px;
+	color: #333;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.order-detail .order-info li.order-payment .text{
+	color: #f21;
+	font-size: 16px;
+	font-weight: bold;
+}
